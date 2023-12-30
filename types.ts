@@ -25,22 +25,21 @@ export interface TagInfo {
 	redirect?: string;
 }
 
-
 export type LinkParseConf = {
 	outgoing: {
-		enabled: boolean,
-		key: string,
-	},
+		enabled: boolean;
+		key: string;
+	};
 	incoming: {
-		enabled: boolean,
-		key: string
-	}
-}
+		enabled: boolean;
+		key: string;
+	};
+};
 export const enumShowListIn = {
 	"": "Sidebar",
-	"CURRENT_PANE": "Current pane",
-	"SPLIT_PANE": "New pane",
-}
+	CURRENT_PANE: "Current pane",
+	SPLIT_PANE: "New pane",
+};
 
 export interface TagFolderSettings {
 	displayMethod: DISPLAY_METHOD;
@@ -50,16 +49,17 @@ export interface TagFolderSettings {
 	ignoreFolders: string;
 	targetFolders: string;
 	hideOnRootTags: string;
-	sortType: "DISPNAME_ASC" |
-	"DISPNAME_DESC" |
-	"NAME_ASC" |
-	"NAME_DESC" |
-	"MTIME_ASC" |
-	"MTIME_DESC" |
-	"CTIME_ASC" |
-	"CTIME_DESC" |
-	"FULLPATH_ASC" |
-	"FULLPATH_DESC";
+	sortType:
+		| "DISPNAME_ASC"
+		| "DISPNAME_DESC"
+		| "NAME_ASC"
+		| "NAME_DESC"
+		| "MTIME_ASC"
+		| "MTIME_DESC"
+		| "CTIME_ASC"
+		| "CTIME_DESC"
+		| "FULLPATH_ASC"
+		| "FULLPATH_DESC";
 	sortExactFirst: boolean;
 	sortTypeTag: "NAME_ASC" | "NAME_DESC" | "ITEMS_ASC" | "ITEMS_DESC";
 	expandLimit: number;
@@ -74,7 +74,7 @@ export interface TagFolderSettings {
 	tagInfo: string;
 	mergeRedundantCombination: boolean;
 	useVirtualTag: boolean;
-	useFrontmatterTagsForNewNotes: boolean,
+	useFrontmatterTagsForNewNotes: boolean;
 	doNotSimplifyTags: boolean;
 	overrideTagClicking: boolean;
 	useMultiPaneList: boolean;
@@ -125,12 +125,12 @@ export const DEFAULT_SETTINGS: TagFolderSettings = {
 		},
 		outgoing: {
 			enabled: true,
-			key: ""
-		}
+			key: "",
+		},
 	},
 	linkShowOnlyFDR: true,
 	linkCombineOtherTree: true,
-	showListIn: ""
+	showListIn: "",
 };
 
 export const VIEW_TYPE_SCROLL = "tagfolder-view-scroll";
@@ -140,12 +140,12 @@ export type ScrollViewFile = {
 	title?: string;
 	content?: string;
 	renderedHTML?: string;
-}
+};
 export type ScrollViewState = {
-	files: ScrollViewFile[],
-	title: string,
-	tagPath: string,
-}
+	files: ScrollViewFile[];
+	title: string;
+	tagPath: string;
+};
 
 export const EPOCH_MINUTE = 60;
 export const EPOCH_HOUR = EPOCH_MINUTE * 60;
@@ -157,15 +157,14 @@ export const FRESHNESS_3 = "FRESHNESS_03";
 export const FRESHNESS_4 = "FRESHNESS_04";
 export const FRESHNESS_5 = "FRESHNESS_05";
 
-
 export const tagDispDict: { [key: string]: string } = {
 	FRESHNESS_01: "🕐",
 	FRESHNESS_02: "📖",
 	FRESHNESS_03: "📗",
 	FRESHNESS_04: "📚",
 	FRESHNESS_05: "🗄",
-	_VIRTUAL_TAG_FRESHNESS: "⌛",
-	_VIRTUAL_TAG_CANVAS: "📋 Canvas"
+	_VIRTUAL_TAG_FRESHNESS: "last-modified",
+	_VIRTUAL_TAG_CANVAS: "canvas",
 };
 
 export const VIEW_TYPE_TAGFOLDER = "tagfolder-view";
@@ -189,15 +188,13 @@ export const OrderKeyItem: Record<string, string> = {
 	FULLPATH: "Fullpath of the file",
 };
 
-
 export type TagFolderListState = {
 	tags: string[];
 	title: string;
-}
-
+};
 
 export type FileCache = {
 	file: TFile;
 	links: string[];
 	tags: string[];
-}
+};
